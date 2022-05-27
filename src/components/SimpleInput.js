@@ -9,6 +9,10 @@ export default function SimpleInput(props) {
 
   const nameInputChangeHandler = event => {
     setEnteredName(event.target.value);
+
+    if (event.target.value.trim().length !== 0) {
+      setEnteredNameIsValid(true);
+    }
   };
 
   const nameInputBlurHandler = event => {
