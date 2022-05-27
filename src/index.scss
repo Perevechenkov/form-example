@@ -22,7 +22,7 @@ body {
 
   border-radius: 12px;
 
-  background-color: $text-color;
+  background-color: $bg-primary-light;
 
   .form-control {
     margin-bottom: 1rem;
@@ -47,6 +47,7 @@ body {
       border: 1px solid $border-dark-opace;
       border-radius: 4px;
 
+      background-color: $bg-primary-light;
       font: inherit;
     }
 
@@ -89,6 +90,13 @@ body {
     &:active {
       background-color: $bg-primary-blue-hover;
       border-color: $bg-primary-blue-hover;
+    }
+
+    &:disabled {
+      border-color: $border-light-opace;
+      background-color: $border-light-opace;
+      color: $border-dark;
+      cursor: not-allowed;
     }
   }
 
