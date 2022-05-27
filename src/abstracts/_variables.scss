@@ -1,11 +1,17 @@
 $bg-primary-dark: #3f3f3f;
 $bg-primary-light: #c8c2bd;
-$bg-primary-blue: #230052;
-$bg-primary-blue-hover: #460897;
+$bg-primary-blue: #240370;
+$bg-primary-blue-hover: #33059e;
+$bg-input-violet: #e0d4fd;
+$bg-input-invalid: #fddddd;
+$bg-input-invalid-focus: #fbe8d2;
 
 $border-dark-opace: rgba(0, 0, 0, 0.25);
 $border-dark: rgba(0, 0, 0, 0.65);
 $border-light-opace: rgba(255, 253, 253, 0.35);
 $border-light: rgba(255, 253, 253, 0.75);
+$border-invalid: #ff8800;
 
 $text-color: white;
+
+$error-red: #b40e0e;

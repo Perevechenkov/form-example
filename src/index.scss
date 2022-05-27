@@ -13,3 +13,97 @@ body {
 
   background-color: $bg-primary-dark;
 }
+
+.app {
+  width: 90%;
+  max-width: 40rem;
+  margin: 3rem auto;
+  padding: 1rem;
+
+  border-radius: 12px;
+
+  background-color: $text-color;
+
+  .form-control {
+    margin-bottom: 1rem;
+
+    input,
+    label {
+      display: block;
+    }
+
+    label {
+      margin-bottom: 0.5rem;
+
+      font-weight: bold;
+    }
+
+    input,
+    select {
+      width: 20rem;
+      max-width: 100%;
+      padding: 0.5rem;
+
+      border: 1px solid $border-dark-opace;
+      border-radius: 4px;
+
+      font: inherit;
+    }
+
+    input:focus {
+      outline: none;
+      border-color: $border-dark;
+      background-color: $bg-input-violet;
+    }
+  }
+
+  .form-actions {
+    text-align: right;
+
+    button {
+      margin-left: 1rem;
+    }
+  }
+
+  .control-group {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 1rem;
+
+    .form-control {
+      min-width: 15rem;
+      flex: 1;
+    }
+  }
+
+  button {
+    font: inherit;
+    background-color: $bg-primary-blue;
+    color: $text-color;
+    border: 1px solid $bg-primary-blue;
+    padding: 0.5rem 1.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+
+    &:hover,
+    &:active {
+      background-color: $bg-primary-blue-hover;
+      border-color: $bg-primary-blue-hover;
+    }
+  }
+
+  .invalid input {
+    border: 1px solid $error-red;
+
+    background-color: $bg-input-invalid;
+
+    &:focus {
+      border-color: $border-invalid;
+      background-color: $bg-input-invalid-focus;
+    }
+  }
+
+  .error-text {
+    color: $error-red;
+  }
+}
