@@ -4,7 +4,8 @@ export default function SimpleInput(props) {
   const nameInputRef = useRef();
 
   const [enteredName, setEnteredName] = useState('');
-  const [enteredNameIsValid, setEnteredNameIsValid] = useState(true);
+  const [enteredNameIsValid, setEnteredNameIsValid] = useState(false);
+  const [enteredNameTouched, setEnteredNameTouched] = useState(false);
 
   const nameInputChangeHandler = event => {
     setEnteredName(event.target.value);
@@ -13,8 +14,11 @@ export default function SimpleInput(props) {
   const formSubmissionHandler = event => {
     event.preventDefault();
 
+    setEnteredNameTouched(true);
+
     if (enteredName.trim().length === 0) {
       setEnteredNameIsValid(false);
+
       return;
     }
 
@@ -22,9 +26,14 @@ export default function SimpleInput(props) {
     setEnteredName('');
   };
 
+  const nameInputIsInvalid = !enteredNameIsValid && enteredNameTouched;
+  const nameInputClasses = nameInputIsInvalid
+    ? 'form-control invalid'
+    : 'form-control';
+
   return (
     <form onSubmit={formSubmissionHandler}>
-      <div className={`form-control ${!enteredNameIsValid && 'invalid'}`}>
+      <div className={nameInputClasses}>
         <label htmlFor='name'>Your Name</label>
         <input
           type='text'
@@ -33,7 +42,7 @@ export default function SimpleInput(props) {
           value={enteredName}
           onChange={nameInputChangeHandler}
         />
-        {!enteredNameIsValid && (
+        {nameInputIsInvalid && (
           <p className='error-text'>Name must not be empty</p>
         )}
       </div>
