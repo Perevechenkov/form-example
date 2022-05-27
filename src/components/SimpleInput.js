@@ -11,6 +11,14 @@ export default function SimpleInput(props) {
     setEnteredName(event.target.value);
   };
 
+  const nameInputBlurHandler = event => {
+    setEnteredNameTouched(true);
+
+    if (enteredName.trim().length === 0) {
+      setEnteredNameIsValid(false);
+    }
+  };
+
   const formSubmissionHandler = event => {
     event.preventDefault();
 
@@ -41,6 +49,7 @@ export default function SimpleInput(props) {
           ref={nameInputRef}
           value={enteredName}
           onChange={nameInputChangeHandler}
+          onBlur={nameInputBlurHandler}
         />
         {nameInputIsInvalid && (
           <p className='error-text'>Name must not be empty</p>
